@@ -8,17 +8,7 @@
 
 ## Introduction
 
-This repository accompanies **Learn what and where; inherit how it is connected**, by Yufu Zang, Zhuokai Shi, Dong Chen, Haiyan Guan, and Bisheng Yang.
-
-The framework reconstructs structured LoD2 building models from point clouds by learning roof-primitive geometry and placement while inheriting connectivity from canonical templates. It decomposes compound roofs, recognizes primitive categories, adapts the corresponding templates, and assembles them into a complete building envelope.
-
-Roof decomposition combines **Separation-Oriented Patch Encoding (SOPE)** with **Structure-Aware Primitive Decoding (SAPD)**. SOPE aggregates regional context and boundary evidence from local geometric descriptors and roof-outline proximity. SAPD incorporates box relations and intrinsic geometric relations among candidate primitives to resolve boundaries at ridges, eaves, and coplanar outline transitions.
-
-Primitive recognition combines **Laplacian-spectral encoding** with **structure-prioritized masked learning**. Spectral coordinates represent the roof-level arrangement of local point groups. During pretraining, masking prioritizes the lower side of stepping edges and valley neighborhoods, encouraging the encoder to reconstruct missing structural cues from the visible roof context. The pretrained encoder then recognizes six categories: Flat, Shed, Gable, Hip, Pyramid, and Mansard.
-
-**Topology-preserving affine template adaptation** uses a shared point Transformer and target-to-template cross-attention to estimate rotation, anisotropic scale, and translation. Applying this transformation to template vertices preserves each primitive's predefined faces and connectivity. Geometric refinement aligns neighboring primitives, and wall and bottom completion produce the final LoD2 envelope.
-
-This repository provides the core method modules. **The full code and data will be uploaded after the paper is accepted.**
+![Method introduction](assets/introduction.png)
 
 ## Environment Requirements
 
