@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.so
+*.o
+build/
+dist/
+*.egg-info/
+.venv/
+.env
+third_party/
+data/
+datasets/
+checkpoints/
+outputs/
+*.pt
+*.pth

@@ -1,0 +1,29 @@
+name: roof-primitive-core
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - pytorch-cuda=12.4
+  - numpy=1.26
+  - scipy=1.13
+  - pyyaml
+  - ninja
+  - setuptools
+  - packaging
+  - pip:
+      - timm==1.0.12
+      - addict==2.4.0
+      - einops==0.8.0
+      # Optional external PTv3 and sparse U-Net backend dependencies.
+      # PyG uses the torch-2.5.0 wheel family for PyTorch 2.5.*.
+      - --find-links https://data.pyg.org/whl/torch-2.5.0+cu124.html
+      - torch-scatter==2.1.2
+      - spconv-cu124==2.3.8
+# Core geometry/masking requires only NumPy.
+# Point Transformer and sparse U-Net source code must be supplied separately.
+# FlashAttention is not needed when PTv3 is configured with enable_flash=False.
